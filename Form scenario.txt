@@ -1,0 +1,72 @@
+#Author: Ramya
+
+Feature: Form
+
+Scenario: user is on home page
+Given user is on home page
+When user enters valid name
+Then user goes to mobile blank
+
+Scenario: user is on home page
+Given user is on home page
+When user enters invalid name
+Then alert message as enter valid name
+
+Scenario Outline: user is on home page
+Given user is on home page
+When user enters valid <mobile>
+Then user goes to email blank
+Examples:
+|mobile|
+|8143227388|
+|7730901400|
+|9393042255|
+
+Scenario Outline: user is on home page
+Given user is on home page
+When user enters invalid <mobile>
+Then alert message as enter valid mobile number
+Examples:
+|mobile|
+|96775286423784|
+|004734837247|
+|12345|
+|0000|
+|1234567890|
+|7893618|
+|81432273|
+
+
+Scenario: user is on home page
+Given user is on home page
+When user enters valid <email>
+Then user goes to gender blank
+|ramya@gmail.com|
+|hai123@gmail.com|
+
+Scenario: user is on home page
+Given user is on home page
+When user enters invalid <email>
+Then alert message as enter valid email
+|ramya@gmailcom|
+|ramyagmail.com|
+|ramya.gmail@com|
+|@ramya.gmail.com|
+|ramya.gmail.com|
+|ramya@gmail@com|
+
+Scenario: user is on home page
+Given user is on home page
+When user enters valid gender
+Then user goes to address blank
+
+Scenario: user is on home page
+Given user is on home page
+When user enters valid address
+And clicks submit
+Then user navigates to success page
+
+Scenario: user is on home page
+Given user is on home page
+When user enters invalid address
+Then alert message as enter valid address
